@@ -1,0 +1,14 @@
+  <div class="container">
+    <% if user_signed_in? %>
+      <% if current_user.username %>
+        <h1>Bienvenido <%= current_user.username %> a <span style="font-weight: bold;">TheRialNews</span></h1>
+      <% else %>
+        <h1>Bienvenido <%= current_user.email %> a <span style="font-weight: bold;">TheRialNews</span></h1>
+      <% end %>
+      <p class="subtitulo">Tu portal extravagante de noticias</p>
+    <% else %>
+      <h1><span style="color: #ffcc00;">Bienvenido a</span> <span style="color: #ff007f; font-weight: bold;">TheRialsNews</span></h1>
+      <h5>¡Comenta nuestras noticias registrándote !</h5>
+    <% end %>
+    <%= render partial: 'notes/index', locals: { note: @note } %>
+  </div>
